@@ -3,214 +3,982 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garlúc — Consultoría & Servicios de Pintura</title>
-    <!-- Tailwind CSS -->
+
+    <!-- SEO -->
+    <title>GARLUC | Pintores profesionales en CABA y GBA</title>
+
+    <meta name="description" content="GARLUC ofrece servicios profesionales de pintura, impermeabilización y renovación de interiores y exteriores en CABA y GBA. Solicitá tu presupuesto sin cargo.">
+
+    <meta name="keywords" content="pintores CABA, pintores GBA, pintura profesional Buenos Aires, pintura de interiores, pintura de exteriores, impermeabilización, pintura de consorcios, pintura de casas, pintura de oficinas">
+
+    <meta name="author" content="GARLUC Pintura Profesional">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="GARLUC | Pintura Profesional">
+    <meta property="og:description" content="Pintura profesional, impermeabilización y renovación de espacios en CABA y GBA.">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
     <style>
-        .bg-brand-primary { background-color: #5B2A86; }
-        .text-brand-primary { color: #5B2A86; }
-        .border-brand-primary { border-color: #5B2A86; }
-        
-        .bg-brand-accent { background-color: #9B6BC3; }
-        .text-brand-accent { color: #9B6BC3; }
-        
-        .bg-brand-dark { background-color: #252525; }
-        .text-brand-dark { color: #252525; }
-        
-        .bg-brand-soft { background-color: #D8C5E8; }
-        .text-brand-soft { color: #D8C5E8; }
-        
-        .bg-brand-light { background-color: #F7F7F5; }
-        
-        .hover-primary:hover { background-color: #4a226e; }
-        .hover-accent:hover { background-color: #8855b3; }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .bg-brand {
+            background-color: #5B2A86;
+        }
+
+        .bg-brand-dark {
+            background-color: #3D1C5A;
+        }
+
+        .bg-brand-soft {
+            background-color: #F1EAF7;
+        }
+
+        .text-brand {
+            color: #5B2A86;
+        }
+
+        .border-brand {
+            border-color: #5B2A86;
+        }
+
+        .hover-brand:hover {
+            background-color: #4A226E;
+        }
+
+        .hero-pattern {
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06), transparent 30%);
+        }
+
+        .card-hover {
+            transition: all 0.25s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .floating-whatsapp {
+            animation: pulseWhatsapp 2.5s infinite;
+        }
+
+        @keyframes pulseWhatsapp {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.04);
+            }
+        }
+
     </style>
+
+    <!-- Datos estructurados para Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "GARLUC Pintura Profesional",
+        "description": "Servicios profesionales de pintura, impermeabilización y renovación de espacios.",
+        "areaServed": [
+            "Ciudad Autónoma de Buenos Aires",
+            "Gran Buenos Aires"
+        ],
+        "telephone": "+54 9 11 6271-5385",
+        "priceRange": "$$",
+        "serviceType": [
+            "Pintura de interiores",
+            "Pintura de exteriores",
+            "Impermeabilización",
+            "Pintura de consorcios",
+            "Pintura comercial",
+            "Tratamiento de superficies"
+        ]
+    }
+    </script>
+
 </head>
-<body class="bg-brand-light text-brand-dark font-sans antialiased">
 
-   <!-- Header / Navegación -->
-    <header class="bg-white text-brand-dark py-3 px-6 sticky top-0 z-50 shadow-md">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <!-- LOGO GARLUC -->
-               <img src="logo.png.PNG" alt="GarLuc Pintura Profesional" class="h-12 w-auto object-contain">
-            </div>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-700">
-                <a href="#inicio" class="hover:text-brand-primary transition">Inicio</a>
-                <a href="#nosotros" class="hover:text-brand-primary transition">Nosotros</a>
-                <a href="#servicios" class="hover:text-brand-primary transition">Servicios</a>
-                <a href="#sectores" class="hover:text-brand-primary transition">Sectores</a>
-                <a href="#contacto" class="hover:text-brand-primary transition">Contacto</a>
-            </nav>
-            <a href="https://wa.me/5491162715385?text=Hola%20GarLuc,%20quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-brand-primary hover-primary text-white font-bold py-2 px-5 rounded-lg text-sm transition shadow-md flex items-center gap-2">
-                <span>Presupuesto Sin Cargo</span> 📲
+<body class="bg-white text-slate-900 antialiased">
+
+<!-- ========================================================= -->
+<!-- HEADER -->
+<!-- ========================================================= -->
+
+<header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-slate-200 z-50">
+
+    <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+        <div class="h-20 flex items-center justify-between">
+
+            <!-- LOGO -->
+
+            <a href="#inicio" class="flex items-center">
+                <img
+                    src="logo.png.PNG"
+                    alt="GARLUC Pintura Profesional"
+                    class="h-12 w-auto"
+                >
             </a>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="bg-brand-primary text-white py-20 px-6 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="text-brand-soft text-sm font-bold tracking-widest uppercase mb-3 inline-block">Asesoramiento Técnico + Ejecución de Excelencia</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Transformamos tus espacios con precisión técnica y acabado profesional</h1>
-            <p class="text-slate-200 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                Especialistas en pintura residencial, comercial y consorcios. Tratamiento integral de superficies, impermeabilización y restauración con presupuesto transparente por m².
+
+            <!-- MENU DESKTOP -->
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+
+                <a href="#inicio" class="hover:text-brand transition">
+                    Inicio
+                </a>
+
+                <a href="#servicios" class="hover:text-brand transition">
+                    Servicios
+                </a>
+
+                <a href="#trabajos" class="hover:text-brand transition">
+                    Trabajos
+                </a>
+
+                <a href="#nosotros" class="hover:text-brand transition">
+                    Nosotros
+                </a>
+
+                <a href="#reseñas" class="hover:text-brand transition">
+                    Reseñas
+                </a>
+
+            </nav>
+
+
+            <!-- BOTON -->
+
+            <a
+                href="https://wa.me/5491162715385?text=Hola%20GARLUC,%20quiero%20solicitar%20un%20presupuesto"
+                target="_blank"
+                class="bg-brand hover-brand text-white font-bold px-5 py-3 rounded-xl text-sm shadow-lg transition"
+            >
+                Presupuesto sin cargo
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ========================================================= -->
+<!-- HERO -->
+<!-- ========================================================= -->
+
+<section
+    id="inicio"
+    class="bg-brand text-white pt-36 pb-24 px-5 hero-pattern"
+>
+
+    <div class="max-w-6xl mx-auto">
+
+        <div class="max-w-4xl">
+
+            <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm font-semibold mb-7">
+
+                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+
+                CABA & GBA
+
+            </div>
+
+
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight mb-7">
+
+                Pintura profesional.
+                <br>
+
+                <span class="text-purple-200">
+                    Espacios renovados.
+                </span>
+
+            </h1>
+
+
+            <p class="text-lg md:text-xl text-purple-100 max-w-2xl leading-relaxed mb-10">
+
+                Pintura, impermeabilización y renovación de interiores
+                y exteriores con trabajo prolijo, asesoramiento y
+                presupuesto claro.
+
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/5491112345678?text=Hola%20Garl%C3%BAc,%20quiero%20cotizar%20un%20trabajo" target="_blank" class="bg-brand-accent hover-accent text-white font-bold py-3.5 px-8 rounded-lg shadow-xl text-lg transition">
-                    Cotizar por WhatsApp
-                </a>
-                <a href="#servicios" class="bg-transparent border-2 border-brand-soft text-brand-soft hover:bg-brand-soft hover:text-brand-primary font-bold py-3.5 px-8 rounded-lg text-lg transition">
-                    Ver Servicios
-                </a>
-            </div>
-        </div>
-    </section>
 
-    <!-- Indicadores de Confianza -->
-    <section class="bg-white py-8 border-b border-slate-200 shadow-sm">
-        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div class="p-4">
-                <p class="text-2xl font-extrabold text-brand-primary">100% Transparente</p>
-                <p class="text-sm text-slate-600 mt-1">Presupuestos detallados por m² sin costos ocultos.</p>
-            </div>
-            <div class="p-4 border-y md:border-y-0 md:border-x border-slate-200">
-                <p class="text-2xl font-extrabold text-brand-primary">Prolijidad Garantizada</p>
-                <p class="text-sm text-slate-600 mt-1">Cuidado extremo de aberturas, pisos y mobiliario.</p>
-            </div>
-            <div class="p-4">
-                <p class="text-2xl font-extrabold text-brand-primary">Insumos de 1° Calidad</p>
-                <p class="text-sm text-slate-600 mt-1">Materiales de alta durabilidad y acabado superior.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Nosotros & Metodología -->
-    <section id="nosotros" class="py-16 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-brand-dark mb-3">La Metodología Garluc</h2>
-            <p class="text-slate-600 max-w-xl mx-auto">Un enfoque estructurado y profesional para asegurar resultados duraderos en cada obra.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+
+                <a
+                    href="https://wa.me/5491162715385?text=Hola%20GARLUC,%20quiero%20solicitar%20un%20presupuesto"
+                    target="_blank"
+                    class="bg-white text-brand font-extrabold px-7 py-4 rounded-xl text-lg text-center shadow-xl hover:bg-purple-50 transition"
+                >
+                    📲 Solicitar presupuesto
+                </a>
+
+
+                <a
+                    href="#servicios"
+                    class="border-2 border-white/40 hover:bg-white/10 font-bold px-7 py-4 rounded-xl text-lg text-center transition"
+                >
+                    Ver servicios
+                </a>
+
+            </div>
+
         </div>
+
+
+        <!-- BENEFICIOS -->
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16 max-w-4xl">
+
+            <div class="bg-white/10 border border-white/10 rounded-2xl p-5">
+
+                <div class="text-2xl mb-2">
+                    ✓
+                </div>
+
+                <p class="font-bold">
+                    Presupuesto claro
+                </p>
+
+                <p class="text-sm text-purple-100 mt-1">
+                    Sin costos ocultos.
+                </p>
+
+            </div>
+
+
+            <div class="bg-white/10 border border-white/10 rounded-2xl p-5">
+
+                <div class="text-2xl mb-2">
+                    ✓
+                </div>
+
+                <p class="font-bold">
+                    Trabajo prolijo
+                </p>
+
+                <p class="text-sm text-purple-100 mt-1">
+                    Cuidamos cada detalle.
+                </p>
+
+            </div>
+
+
+            <div class="bg-white/10 border border-white/10 rounded-2xl p-5">
+
+                <div class="text-2xl mb-2">
+                    ✓
+                </div>
+
+                <p class="font-bold">
+                    Asesoramiento
+                </p>
+
+                <p class="text-sm text-purple-100 mt-1">
+                    Te ayudamos a elegir la solución.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- SERVICIOS -->
+<!-- ========================================================= -->
+
+<section id="servicios" class="py-24 px-5">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="max-w-2xl mb-14">
+
+            <span class="text-brand font-bold text-sm uppercase tracking-wider">
+                Nuestros servicios
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black mt-3 mb-5">
+                Soluciones para cada superficie.
+            </h2>
+
+            <p class="text-slate-600 text-lg">
+                Desde una habitación hasta una fachada completa,
+                adaptamos el trabajo a las necesidades de cada proyecto.
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+            <!-- SERVICIO 1 -->
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-2xl mb-6">
+                    🎨
+                </div>
+
+                <h3 class="text-xl font-extrabold mb-3">
+                    Pintura de interiores
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    Paredes, cielorrasos, enduido, reparación de superficies
+                    y pintura decorativa.
+                </p>
+
+                <div class="text-sm font-semibold text-brand">
+                    Casas · Departamentos · Oficinas
+                </div>
+
+            </div>
+
+
+            <!-- SERVICIO 2 -->
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-2xl mb-6">
+                    🏠
+                </div>
+
+                <h3 class="text-xl font-extrabold mb-3">
+                    Exteriores
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    Frentes, fachadas, medianeras y superficies exteriores
+                    expuestas a la intemperie.
+                </p>
+
+                <div class="text-sm font-semibold text-brand">
+                    Casas · Edificios · Comercios
+                </div>
+
+            </div>
+
+
+            <!-- SERVICIO 3 -->
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-2xl mb-6">
+                    💧
+                </div>
+
+                <h3 class="text-xl font-extrabold mb-3">
+                    Impermeabilización
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    Terrazas, azoteas, filtraciones, fisuras y tratamiento
+                    preventivo de superficies.
+                </p>
+
+                <div class="text-sm font-semibold text-brand">
+                    Terrazas · Azoteas · Fachadas
+                </div>
+
+            </div>
+
+
+            <!-- SERVICIO 4 -->
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-2xl mb-6">
+                    🪟
+                </div>
+
+                <h3 class="text-xl font-extrabold mb-3">
+                    Puertas, ventanas y rejas
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    Lijado, preparación y aplicación de esmaltes, barnices
+                    y tratamientos para madera y metal.
+                </p>
+
+                <div class="text-sm font-semibold text-brand">
+                    Madera · Metal · Herrería
+                </div>
+
+            </div>
+
+
+            <!-- SERVICIO 5 -->
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-2xl mb-6">
+                    🚗
+                </div>
+
+                <h3 class="text-xl font-extrabold mb-3">
+                    Pisos y tratamientos
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    Tratamientos para pisos, garajes y superficies sometidas
+                    a tránsito o desgaste.
+                </p>
+
+                <div class="text-sm font-semibold text-brand">
+                    Garajes · Comercios · Depósitos
+                </div>
+
+            </div>
+
+
+            <!-- SERVICIO 6 -->
+
+            <div class="bg-white border border-slate-200 rounded-2xl p-7 card-hover">
+
+                <div class="w-14 h-14 bg-brand-soft rounded-xl flex items-center justify-center text-2xl mb-6">
+                    🏢
+                </div>
+
+                <h3 class="text-xl font-extrabold mb-3">
+                    Consorcios y mantenimiento
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed mb-5">
+                    Mantenimiento de espacios comunes, fachadas, pasillos
+                    y superficies de edificios.
+                </p>
+
+                <div class="text-sm font-semibold text-brand">
+                    Consorcios · Administraciones · Edificios
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center mt-12">
+
+            <p class="text-slate-600 mb-5">
+                ¿No sabés qué solución necesita tu superficie?
+            </p>
+
+            <a
+                href="https://wa.me/5491162715385?text=Hola%20GARLUC,%20necesito%20asesoramiento%20para%20un%20trabajo"
+                target="_blank"
+                class="inline-flex bg-brand hover-brand text-white font-bold px-7 py-4 rounded-xl transition shadow-lg"
+            >
+                Consultar con GARLUC
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CTA -->
+<!-- ========================================================= -->
+
+<section class="bg-brand-soft py-20 px-5">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+        <span class="text-brand font-bold uppercase text-sm tracking-wider">
+            Presupuesto
+        </span>
+
+        <h2 class="text-4xl md:text-5xl font-black mt-3 mb-5">
+            ¿Tenés un proyecto en mente?
+        </h2>
+
+        <p class="text-slate-600 text-lg max-w-2xl mx-auto mb-8">
+            Contanos qué necesitás, dónde es el trabajo y qué superficie
+            querés renovar. Te contactamos para evaluar el proyecto.
+        </p>
+
+        <a
+            href="https://wa.me/5491162715385?text=Hola%20GARLUC,%20quiero%20solicitar%20un%20presupuesto"
+            target="_blank"
+            class="inline-flex bg-brand hover-brand text-white font-extrabold px-8 py-4 rounded-xl text-lg shadow-xl transition"
+        >
+            📲 Solicitar presupuesto sin cargo
+        </a>
+
+        <p class="text-sm text-slate-500 mt-4">
+            Atención por WhatsApp
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- TRABAJOS -->
+<!-- ========================================================= -->
+
+<section id="trabajos" class="py-24 px-5">
+
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center max-w-2xl mx-auto mb-14">
+
+            <span class="text-brand font-bold uppercase text-sm tracking-wider">
+                Portfolio
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black mt-3 mb-5">
+                Trabajos realizados
+            </h2>
+
+            <p class="text-slate-600 text-lg">
+                Cada proyecto comienza con una superficie diferente.
+                Nuestro objetivo es terminar con un resultado que se note.
+            </p>
+
+        </div>
+
+
+        <!-- FOTOS -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+
+            <div class="rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3]">
+
+                <!-- Reemplazar por una foto real -->
+
+                <img
+                    src="trabajo-1.jpg"
+                    alt="Trabajo de pintura profesional GARLUC"
+                    class="w-full h-full object-cover"
+                >
+
+            </div>
+
+
+            <div class="rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3]">
+
+                <img
+                    src="trabajo-2.jpg"
+                    alt="Pintura de interiores realizada por GARLUC"
+                    class="w-full h-full object-cover"
+                >
+
+            </div>
+
+
+            <div class="rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3]">
+
+                <img
+                    src="trabajo-3.jpg"
+                    alt="Trabajo de pintura exterior GARLUC"
+                    class="w-full h-full object-cover"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center mt-10">
+
+            <p class="text-sm text-slate-500">
+                Próximamente más proyectos y trabajos realizados.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- METODOLOGÍA -->
+<!-- ========================================================= -->
+
+<section id="nosotros" class="bg-slate-50 py-24 px-5">
+
+    <div class="max-w-6xl mx-auto">
+
+        <div class="text-center max-w-2xl mx-auto mb-14">
+
+            <span class="text-brand font-bold uppercase text-sm tracking-wider">
+                Nuestra forma de trabajar
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black mt-3 mb-5">
+                Simple, claro y profesional.
+            </h2>
+
+        </div>
+
+
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-xl border-t-4 border-brand-primary shadow-sm">
-                <span class="text-brand-primary font-black text-2xl">01</span>
-                <h3 class="font-bold text-lg text-brand-dark mt-2 mb-1">Relevamiento</h3>
-                <p class="text-slate-600 text-xs leading-relaxed">Inspección técnica de superficies y asesoramiento en materiales.</p>
+
+
+            <div class="bg-white rounded-2xl p-7 border border-slate-200">
+
+                <span class="text-brand font-black text-3xl">
+                    01
+                </span>
+
+                <h3 class="font-extrabold text-xl mt-5 mb-3">
+                    Relevamos
+                </h3>
+
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Evaluamos el estado de la superficie y las necesidades
+                    del proyecto.
+                </p>
+
             </div>
-            <div class="bg-white p-6 rounded-xl border-t-4 border-brand-primary shadow-sm">
-                <span class="text-brand-primary font-black text-2xl">02</span>
-                <h3 class="font-bold text-lg text-brand-dark mt-2 mb-1">Cotización</h3>
-                <p class="text-slate-600 text-xs leading-relaxed">Desglose claro de mano de obra y cómputo métrico por área.</p>
+
+
+            <div class="bg-white rounded-2xl p-7 border border-slate-200">
+
+                <span class="text-brand font-black text-3xl">
+                    02
+                </span>
+
+                <h3 class="font-extrabold text-xl mt-5 mb-3">
+                    Cotizamos
+                </h3>
+
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Armamos un presupuesto claro según el trabajo necesario.
+                </p>
+
             </div>
-            <div class="bg-white p-6 rounded-xl border-t-4 border-brand-primary shadow-sm">
-                <span class="text-brand-primary font-black text-2xl">03</span>
-                <h3 class="font-bold text-lg text-brand-dark mt-2 mb-1">Preparación</h3>
-                <p class="text-slate-600 text-xs leading-relaxed">Enmascarado, enduido, fijador y sellado de grietas previa pintura.</p>
+
+
+            <div class="bg-white rounded-2xl p-7 border border-slate-200">
+
+                <span class="text-brand font-black text-3xl">
+                    03
+                </span>
+
+                <h3 class="font-extrabold text-xl mt-5 mb-3">
+                    Preparamos
+                </h3>
+
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Protegemos el espacio y preparamos correctamente
+                    cada superficie.
+                </p>
+
             </div>
-            <div class="bg-white p-6 rounded-xl border-t-4 border-brand-primary shadow-sm">
-                <span class="text-brand-primary font-black text-2xl">04</span>
-                <h3 class="font-bold text-lg text-brand-dark mt-2 mb-1">Aplicación</h3>
-                <p class="text-slate-600 text-xs leading-relaxed">Ejecución prolija y entrega con inspección final de acabado.</p>
+
+
+            <div class="bg-white rounded-2xl p-7 border border-slate-200">
+
+                <span class="text-brand font-black text-3xl">
+                    04
+                </span>
+
+                <h3 class="font-extrabold text-xl mt-5 mb-3">
+                    Ejecutamos
+                </h3>
+
+                <p class="text-slate-600 text-sm leading-relaxed">
+                    Realizamos el trabajo y revisamos el acabado antes
+                    de entregar.
+                </p>
+
             </div>
+
         </div>
-    </section>
 
-    <!-- Servicios -->
-    <section id="servicios" class="bg-slate-100 py-16 px-6 border-t border-slate-200">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-brand-dark mb-3">Nuestros Servicios</h2>
-                <p class="text-slate-600">Soluciones integrales de pintura y tratamiento de superficies.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="w-12 h-12 bg-brand-soft text-brand-primary rounded-lg flex items-center justify-center font-bold text-xl mb-4">🎨</div>
-                    <h3 class="font-bold text-lg text-brand-dark mb-2">Interiores & Decorativa</h3>
-                    <p class="text-slate-600 text-sm mb-3">Pintura lisa en paredes, cielorrasos anti-hongo, enduido completo, fijador sellador y reparación de parches.</p>
-                </div>
+    </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="w-12 h-12 bg-brand-soft text-brand-primary rounded-lg flex items-center justify-center font-bold text-xl mb-4">🏠</div>
-                    <h3 class="font-bold text-lg text-brand-dark mb-2">Exteriores e Impermeabilización</h3>
-                    <p class="text-slate-600 text-sm mb-3">Frentes, fachadas, medianeras, terrazas, sellado de fisuras y revestimientos plásticos tipo Revear/Tarquini.</p>
-                </div>
+</section>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="w-12 h-12 bg-brand-soft text-brand-primary rounded-lg flex items-center justify-center font-bold text-xl mb-4">🪟</div>
-                    <h3 class="font-bold text-lg text-brand-dark mb-2">Carpintería & Muebles</h3>
-                    <p class="text-slate-600 text-sm mb-3">Lijado, esmalte sintético, barnizado y laqueado en puertas, ventanas, rejas, portones y mobiliario de madera o metal.</p>
-                </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="w-12 h-12 bg-brand-soft text-brand-primary rounded-lg flex items-center justify-center font-bold text-xl mb-4">🚗</div>
-                    <h3 class="font-bold text-lg text-brand-dark mb-2">Tratamientos Especiales</h3>
-                    <p class="text-slate-600 text-sm mb-3">Pintura epoxi/poliuretánica para garajes y pisos de alto tránsito, mantenimiento de piscinas e hidrolavados de alta presión.</p>
-                </div>
+<!-- ========================================================= -->
+<!-- RESEÑAS -->
+<!-- ========================================================= -->
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <div class="w-12 h-12 bg-brand-soft text-brand-primary rounded-lg flex items-center justify-center font-bold text-xl mb-4">🏢</div>
-                    <h3 class="font-bold text-lg text-brand-dark mb-2">Consorcios & Trabajos en Altura</h3>
-                    <p class="text-slate-600 text-sm mb-3">Mantenimiento de pasillos, fachadas de edificios, impermeabilización de azoteas y sellado de juntas de dilatación.</p>
-                </div>
+<section id="reseñas" class="py-24 px-5">
 
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-brand-soft text-brand-primary rounded-lg flex items-center justify-center font-bold text-xl mb-4">📋</div>
-                        <h3 class="font-bold text-lg text-brand-dark mb-2">Asesoramiento Técnico</h3>
-                        <p class="text-slate-600 text-sm mb-3">Consultoría en selección de colores, tipos de pintura y preparación adecuada según el estado del soporte.</p>
-                    </div>
-                </div>
+    <div class="max-w-6xl mx-auto">
 
-            </div>
+        <div class="text-center max-w-2xl mx-auto mb-12">
+
+            <span class="text-brand font-bold uppercase text-sm tracking-wider">
+                Opiniones
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black mt-3 mb-5">
+                La confianza se construye trabajo a trabajo.
+            </h2>
+
+            <p class="text-slate-600">
+                Estamos construyendo nuestra comunidad de clientes.
+                Muy pronto vas a poder conocer sus experiencias.
+            </p>
+
         </div>
-    </section>
 
-    <!-- Sectores / Clientes -->
-    <section id="sectores" class="py-16 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-brand-dark mb-3">Sectores que Atendemos</h2>
-            <p class="text-slate-600">Servicios adaptados a las necesidades de cada cliente.</p>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div class="p-5 bg-white rounded-lg border border-slate-200 shadow-sm">
-                <span class="text-2xl mb-2 block">🏢</span>
-                <span class="font-bold text-sm text-brand-dark">Consorcios</span>
-            </div>
-            <div class="p-5 bg-white rounded-lg border border-slate-200 shadow-sm">
-                <span class="text-2xl mb-2 block">🏡</span>
-                <span class="font-bold text-sm text-brand-dark">Particulares (Casas/Deptos)</span>
-            </div>
-            <div class="p-5 bg-white rounded-lg border border-slate-200 shadow-sm">
-                <span class="text-2xl mb-2 block">🏬</span>
-                <span class="font-bold text-sm text-brand-dark">Comercios & Oficinas</span>
-            </div>
-            <div class="p-5 bg-white rounded-lg border border-slate-200 shadow-sm">
-                <span class="text-2xl mb-2 block">📐</span>
-                <span class="font-bold text-sm text-brand-dark">Arquitectos / Obras</span>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer / Contacto -->
-    <footer id="contacto" class="bg-brand-primary text-white py-12 px-6">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+
+            <div class="border border-slate-200 rounded-2xl p-7">
+
+                <div class="text-yellow-500 text-xl mb-5">
+                    ★★★★★
+                </div>
+
+                <p class="text-slate-500 italic text-sm">
+                    "Próximamente reseña de nuestros clientes."
+                </p>
+
+                <p class="font-bold mt-5">
+                    Cliente GARLUC
+                </p>
+
+            </div>
+
+
+            <div class="border border-slate-200 rounded-2xl p-7">
+
+                <div class="text-yellow-500 text-xl mb-5">
+                    ★★★★★
+                </div>
+
+                <p class="text-slate-500 italic text-sm">
+                    "Próximamente reseña de nuestros clientes."
+                </p>
+
+                <p class="font-bold mt-5">
+                    Cliente GARLUC
+                </p>
+
+            </div>
+
+
+            <div class="border border-slate-200 rounded-2xl p-7">
+
+                <div class="text-yellow-500 text-xl mb-5">
+                    ★★★★★
+                </div>
+
+                <p class="text-slate-500 italic text-sm">
+                    "Próximamente reseña de nuestros clientes."
+                </p>
+
+                <p class="font-bold mt-5">
+                    Cliente GARLUC
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="text-center mt-10">
+
+            <p class="text-sm text-slate-500 mb-4">
+                ¿Ya trabajamos juntos?
+            </p>
+
+            <a
+                href="#"
+                class="inline-flex border-2 border-brand text-brand font-bold px-6 py-3 rounded-xl hover:bg-brand hover:text-white transition"
+            >
+                ⭐ Dejanos tu reseña
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- ZONA -->
+<!-- ========================================================= -->
+
+<section class="bg-slate-900 text-white py-20 px-5">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+        <div class="text-4xl mb-5">
+            📍
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-black mb-4">
+            Trabajamos en CABA y GBA
+        </h2>
+
+        <p class="text-slate-300 max-w-xl mx-auto mb-7">
+            Consultanos por tu localidad y verificamos disponibilidad
+            para realizar el trabajo.
+        </p>
+
+        <a
+            href="https://wa.me/5491162715385?text=Hola%20GARLUC,%20quiero%20consultar%20si%20trabajan%20en%20mi%20zona"
+            target="_blank"
+            class="inline-flex bg-white text-slate-900 font-bold px-7 py-4 rounded-xl hover:bg-slate-100 transition"
+        >
+            Consultar disponibilidad
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CONTACTO -->
+<!-- ========================================================= -->
+
+<footer id="contacto" class="bg-brand text-white py-16 px-5">
+
+    <div class="max-w-7xl mx-auto">
+
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+
+            <!-- MARCA -->
+
             <div>
-                <h3 class="text-2xl font-black mb-3">GARLUC</h3>
-                <p class="text-slate-200 text-sm leading-relaxed mb-4">Consultoría y servicios de pintura profesional. Calidad, orden y compromiso en cada metro cuadrado.</p>
-                <p class="text-xs text-brand-soft">📍 Cobertura: Buenos Aires, Argentina (CABA y GBA)</p>
+
+                <img
+                    src="logo.png.PNG"
+                    alt="GARLUC"
+                    class="h-14 w-auto mb-5 brightness-0 invert"
+                >
+
+                <p class="text-purple-100 text-sm leading-relaxed max-w-sm">
+                    Pintura profesional, impermeabilización y renovación
+                    de espacios en CABA y GBA.
+                </p>
+
             </div>
-            <div class="md:text-right flex flex-col md:items-end justify-center">
-                <p class="font-bold text-lg mb-2">¿Querés renovar tus espacios?</p>
-                <a href="https://wa.me/5491162715385?text=Hola%20Garl%C3%BAc,%20quiero%20solicitar%20un%20presupuesto" target="_blank" class="bg-brand-accent hover-accent text-white font-bold py-3 px-6 rounded-lg shadow-lg text-sm inline-block transition">
-                    Contactar por WhatsApp 💬
+
+
+            <!-- CONTACTO -->
+
+            <div>
+
+                <h3 class="font-extrabold text-lg mb-5">
+                    Contacto
+                </h3>
+
+                <div class="space-y-3 text-sm text-purple-100">
+
+                    <p>
+                        📲 WhatsApp
+                    </p>
+
+                    <p>
+                        📍 CABA y GBA
+                    </p>
+
+                    <p>
+                        💬 Atención personalizada
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CTA -->
+
+            <div>
+
+                <h3 class="font-extrabold text-lg mb-5">
+                    ¿Hablamos?
+                </h3>
+
+                <p class="text-purple-100 text-sm mb-5">
+                    Contanos qué trabajo necesitás realizar.
+                </p>
+
+                <a
+                    href="https://wa.me/5491162715385?text=Hola%20GARLUC,%20quiero%20solicitar%20un%20presupuesto"
+                    target="_blank"
+                    class="inline-flex bg-white text-brand font-extrabold px-6 py-3 rounded-xl hover:bg-purple-50 transition"
+                >
+                    📲 Escribir por WhatsApp
                 </a>
+
             </div>
+
         </div>
-        <div class="max-w-5xl mx-auto border-t border-purple-900/50 pt-6 text-center text-xs text-slate-300">
-            <p>© 2026 Garluc — Todos los derechos reservados.</p>
+
+
+        <div class="border-t border-white/20 pt-7 text-center">
+
+            <p class="text-purple-200 text-xs">
+                © 2026 GARLUC — Pintura Profesional.
+                Todos los derechos reservados.
+            </p>
+
         </div>
-    </footer>
+
+    </div>
+
+</footer>
+
+
+<!-- ========================================================= -->
+<!-- WHATSAPP FLOTANTE -->
+<!-- ========================================================= -->
+
+<a
+    href="https://wa.me/5491162715385?text=Hola%20GARLUC,%20quiero%20solicitar%20un%20presupuesto"
+    target="_blank"
+    class="fixed bottom-5 right-5 z-50 bg-green-500 hover:bg-green-600 text-white font-bold px-5 py-4 rounded-full shadow-2xl floating-whatsapp flex items-center gap-2"
+>
+
+    <span class="text-xl">
+        💬
+    </span>
+
+    <span class="hidden sm:inline">
+        Presupuesto
+    </span>
+
+</a>
+
 
 </body>
 </html>
